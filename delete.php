@@ -9,7 +9,6 @@ if (isset($_GET['id'])) {
     $sql = "DELETE FROM students WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id);
-
     if ($stmt->execute()) {
         // Redirect back to index with a message
         header("Location: index.php?msg=Record deleted successfully");
